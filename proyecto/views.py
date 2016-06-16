@@ -16,9 +16,10 @@ class formi(View):
         return render(request, template, context)
 
     def post(self, request):
-        form = EstudianteForm(request.POST)
+        form = EstudianteForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            cosa = form.save(commit=False)
+            cosa.save()
             return redirect('/proyecto/casi')
         else:
-            return redirect('/proyecto/casi')
+            return redirect('/proyecto/error')
