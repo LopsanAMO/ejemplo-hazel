@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <center>
+        {% if user.is_authenticated %}
+            <h2>
+            Casita :D
+                {{ request.user }}
+                <a href="/login/logout">Logout</a>
+            </h2>
+        {% else %}
+            <h2>
+                nel perro
+            </h2>
+            <a href="/login/login">Login</a>
+        {% endif %}
+    </center>
+{% endblock %}

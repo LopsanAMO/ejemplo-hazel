@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <center>
+        {% if user.is_authenticated %}
+            <h2>
+            Casita :D
+
+            </h2>
+            <p>
+                {{ user.get_full_name }}
+            </p>
+        {% else %}
+            <h2>
+                nel perro
+            </h2>
+        {% endif %}
+    </center>
+{% endblock %}
